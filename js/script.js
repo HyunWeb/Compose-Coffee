@@ -381,7 +381,7 @@ $(function (){
         $storeLight.attr("src", "img/StoreLight.png")
     }
     function StoreCompose2 () {
-        $storeCompose.attr("src", "img/composeStore2.png")
+        $storeCompose.attr("src", "img/ComposeStore2.png")
         $storeLight.attr("src", "img/StoreLight2.png")
     }
     function bannerChange () {
@@ -396,7 +396,7 @@ $(function (){
         $storeLight.attr("src", "img/StoreLight.png")
     }
     function bannerChange2 () {
-        $storeCompose.attr("src", "img/composeStore2.png")
+        $storeCompose.attr("src", "img/ComposeStore2.png")
         $storeLight.attr("src", "img/StoreLight2.png")
     }
 }); //document.onready
