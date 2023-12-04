@@ -1,0 +1,1150 @@
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HakgyoansimGaeulsopungB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimGaeulsopungB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+html, body{height: 100%;  font-family: 'Noto Sans KR', sans-serif; color: #3e3b39;}
+body{overflow: hidden;} 
+.page {height: 100%;}
+
+
+/* 메뉴바 */
+#menu{
+    background-color: #404042;
+    position: fixed;
+    z-index: 90;
+    width: 100%;
+    height: 60px; 
+}
+#menu > button {
+    display:none;
+    width: 50px; 
+    height: 50px; 
+    float: right;
+    margin-top: 5px; 
+    margin-right: 10px; 
+    background-image: url("../img/menuButton.svg");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition-duration: 300ms;
+
+    background-color: transparent;
+    outline: none;
+    border:none;
+    cursor:pointer;
+    padding: 0;
+}
+#menu > button > span {
+    position: absolute;
+    display:block;
+    width: 1px; 
+    height: 1px; 
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+}
+
+#menuList {
+    float:right;
+}
+#menuList > li {
+    float:left;
+}
+
+/* 로고 */
+#menu > a{
+    float:left;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#menu > a > img {width: 325px; display: block; transition-duration: 200ms;}
+
+#menu > a, #menuList > li > a{
+    display: block;
+    text-decoration: none;
+    color:#fed900;
+    font-weight: bold;
+    font-size: 17px; 
+}
+
+#menuList > li > a{
+    padding : 20px 50px;
+}
+#menuList > li > a:hover{
+    background-color: #333;
+}
+/* 메인 타이틀 */
+.main {
+    background-color:#fed900;
+   
+}
+.main > div:first-child {
+    height: 20%;
+    box-sizing: border-box;
+    padding-top: 60px;
+
+    font-family: "yg-jalnan", sans-serif;
+    font-size: 20px; 
+    text-align: center;
+}
+.main > div > span {
+    font-size: 40px; 
+    display: block;
+    margin-top:40px; 
+    margin-bottom: 10px
+}
+.main > div:last-child {
+    height: 80%;
+    position: relative;
+}
+#composeTitle {
+    /* width: 45%; */
+    position:absolute;
+    left: 50%;
+    bottom: 69%;
+    transform: translate(-50%, 0) scale(1);
+    animation: titleUp 0.5s ease 1;
+}
+#clickme{
+    transform: rotate(-25deg) scale(1);
+    font-size: 40px;
+    font-family: "HakgyoansimGaeulsopungB", sans-serif;
+    position:absolute;
+    left: 40%;
+    bottom: 20%;
+    animation: clickmeScale1 4s ease infinite;
+}
+
+@keyframes clickmeScale1 {
+    from {
+        transform: rotate(-25deg) scale(1);
+    }
+    50% {
+        transform: rotate(-20deg) scale(1.3);
+    }
+    to {
+        transform: rotate(-25deg) scale(1);
+    }
+}
+@keyframes clickmeScale2 {
+    from {
+        transform: rotate(-25deg) scale(1);
+    }
+    50% {
+        transform: rotate(-20deg) scale(1.2);
+    }
+    to {
+        transform: rotate(-25deg) scale(1);
+    }
+}
+
+@keyframes titleUp{
+    from {
+        bottom: 40%;
+        transform: translate(-50%, 0) scale(0.5);
+    }
+    to {
+        bottom: 69%;
+        transform: translate(-50%, 0) scale(1);
+    }
+}
+@keyframes titleUp2{
+    from {
+        bottom: 40%;
+        transform: translate(-50%, 0) scale(0.5);
+    }
+    to {
+        bottom: 60%;
+        transform: translate(-50%, 0) scale(1);
+    }
+}
+
+.beverage {
+    /* width: 10%; */
+    position: absolute;
+}
+#compass {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform:translate(-50%, 50%) rotate(0deg);
+    z-index: 1;
+}
+#compassPin {
+    position:absolute;
+    left: 50%;
+    bottom: 0;
+    transform:translate(-50%, 50%) rotate(0deg);
+    /* animation: rotate 2s ease 1 ; */
+    z-index: 1;
+    cursor: pointer;
+}
+@keyframes rotate
+{
+    from {transform: translate(-50%, 50%) rotate(0deg); }
+    40% {transform: translate(-50%, 50%) rotate(-90deg); }
+    to {transform: translate(-50%, 50%) rotate(0deg); }
+}
+
+
+@keyframes beverageUp
+{
+    from {opacity: 0;
+        transform: rotate(-30deg) translate(0, 135px);}
+    to {opacity: 1;
+        transform: rotate(-30deg) translate(0, 0px);}
+}
+
+.beverage:nth-child(2) {
+    bottom:18%;
+    left:25%;
+    z-index:10;
+    opacity: 0;
+    transform: rotate(-30deg) translate(0, 135px);
+}
+.beverage:nth-child(3) {
+    bottom: 34%;
+    left:50%;
+    z-index:20;
+    opacity: 0;
+    transform: translate(-50%, 135px); 
+}
+.beverage:nth-child(4) {
+    bottom: 18%;
+    right:25%;
+    z-index:10;
+    opacity: 0;
+    transform: rotate(30deg) translate(0, 135px);
+}
+
+/* 프로모션 페이지 */
+.promotion {
+    background-color: #fed900;
+    overflow: hidden;
+}
+#promotionList {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#promotionList > li {
+    position: absolute;
+    overflow: hidden;
+}
+.promotion1 { top: 50%; left: 10%; transform: translate(-10%, -50%); z-index: 10;}
+.promotion2 { top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10;}
+.promotion3 { top: 50%; left: 90%; transform: translate(-90%, -50%); z-index: 10;}
+.promotionList > li > a {
+    display: block; 
+}
+#promotionList > li > a > img {
+    width: 435px;
+    display: block;
+    transition-duration: 500ms;
+}
+
+#promotionList > li:hover > a > img {
+    transform: scale(105%);
+}
+
+/* 메뉴 */
+.menu {
+    background-color: #ffce4e;
+    text-align: center;
+    background-image: url("../img/composeLetter.svg");
+    background-repeat: no-repeat;
+    background-size: 1600px;
+    background-position: -100vw 95%;
+    /* transition-duration: 1s; */
+    animation: backmove3 40s linear infinite
+}
+.menu > div:first-child {
+    height: 30%;
+    background-image: url("../img/composeLetter.svg");  
+    background-position: -100vw 100%;
+    background-repeat: no-repeat;
+    background-size: 1600px;
+    animation: backmove1 40s 4s linear infinite
+
+ 
+}
+@keyframes backmove1{
+    from {
+        background-position: -100vw 100%;
+    }
+    50% {
+        background-position: 0vw 100%;
+    }
+    to {
+        background-position: 100vw 100%;
+    }
+}
+@keyframes backmove2{
+    from {
+        background-position: 100vw 50%;
+    }
+    50% {
+        background-position: 0vw 50%;
+    }
+    to {
+        background-position: -100vw 50%;
+    }
+}
+@keyframes backmove3{
+    from {
+        background-position: -100vw 95%;
+    }
+    50% {
+        background-position: 0vw 95%;
+    }
+    to {
+        background-position: 100vw 95%;
+    }
+}
+.menu > div > h2 {
+    padding-top : 110px;
+    font-size: 50px;
+    font-family: 'yg-jalnan', sans-serif;
+    margin-bottom: 20px;
+}
+.menu > div > p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px; 
+    font-weight: 500;
+}
+#menuContent {
+    position: relative;
+    height: 50%;
+    background-image: url("../img/composeLetter.svg");
+    background-position: 100vw 50%;
+    background-repeat: no-repeat;
+    background-size: 1600px;
+    animation: backmove2 40s 2s linear infinite
+}
+#menuContent::before { 
+    content: ""; 
+    display: block; 
+    position:absolute;
+    width: 95%;
+    height: 6%;
+    background: linear-gradient(180deg, rgba(65,70,91,1) 27%, rgba(57,60,72,1) 30%);
+    right: 0;
+}
+#menuContent > div {
+    position:absolute;
+    width: 365px; 
+    height: 470px; 
+    background-image: url("../img/menuList.png");
+    background-repeat: no-repeat;
+
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+    font-size: 40px; 
+    cursor:pointer;
+}
+#menuContent > div > span { 
+    position: absolute;
+    display: block;
+    bottom: -55px;
+    left: 50%;
+    transform: translate(-50%,0);
+    transition-duration: 300ms;
+}
+#menuContent > div:nth-child(n) { right: -100vw;}
+
+#menuContent > div > img {
+    position:absolute;
+    left: 50%;
+    bottom : 10%;
+    transform: translate(-50%, -10%) rotate(0deg);
+    transition-duration: 300ms;
+}
+#menuContent > div:nth-child(1) > img {
+    width: 40%;
+}
+#menuContent > div:nth-child(2) > img {
+    width: 35%;
+}
+#menuContent > div:nth-child(3) > img {
+    width: 60%;
+    bottom : 15%;
+    transform: translate(-50%, -15%);
+}
+
+#menuContent > div:hover > img {
+    transition-duration: 500ms;
+    transform: translate(-50%, -10%) scale(110%);
+    animation: shake 1s ease 1;
+    
+}
+
+#menuContent > div:last-child:hover > img {
+    transform: translate(-50%, -15%) scale(110%);
+    /* animation: shake 1s linear 1; */
+    
+}
+#menuContent > div:hover > span {
+    transform: translate(-50%,0) scale(110%);
+}
+/* 브랜드 스토리 */
+.story {
+    background-color:#feeecd;
+    position: relative;
+    background-image: url("../img/composeStory.svg");
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: 90% center;
+}
+.storyLetter{
+    font-family: 'Noto Sans KR', sans-serif;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform:translate(-20%, -50%);
+}
+.Letter > h2 {
+    font-size: 40px; 
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.Letter > h3 {
+    font-size: 50px;
+    font-family: 'yg-jalnan', sans-serif;
+    margin-bottom: 30px;
+}
+.Letter > p {
+    font-size: 25px; 
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+.Letter > a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    width: 160px;
+    line-height: 54px;
+    border: 3px solid #404042;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    box-sizing: border-box;
+    transition-duration: 300ms;
+}
+.Letter > a:hover {
+    background-color: #404042;
+    color:#feeecd;
+}
+
+#logoBox {
+    position:absolute;
+    left:0;
+    height: 100%;
+    width: 45%;
+    background-color: #394e59;
+    box-shadow: 5px 0px 10px #40404289;
+    
+}
+/* #logoBox::after {
+    content: "";
+    display: block;
+    width: 451px;
+    height: 451px; 
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 136px rgba(252, 255, 192);
+} */
+#emptyLogo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    box-shadow:2px 4px 20px #40404295;
+    border-radius: 50%;
+}
+.innerglow {
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0;
+    /* animation : whiteLight 5s 2s linear infinite; */
+}
+.glowBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background-color: #fcffc0;
+    filter: blur(40px);
+    border-radius: 50%;
+    opacity: 0;
+}
+/* #glowBox > span {
+    position:absolute;
+    display: block;
+    width: 1px; height: 1px;
+    overflow:hidden;
+    clip:rect(0, 0, 0, 0);
+} */
+/* #glowBox > div {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background-color: white;
+    filter:none;
+} */
+#waterDrop {
+    position: absolute;
+    top:146px;
+    left:50%;
+    transform: translate(-50%, 0%) scale(100%);
+    z-index: 3;
+    opacity: 0;
+}
+@keyframes drop {
+    from {
+        top:-65%;
+        transform: translate(-50%, 0%) scale(60%);
+        opacity: 1;
+    }
+    to {
+        top: 146px;
+        transform: translate(-50%, 0%) scale(100%);
+        opacity: 1;
+      }
+}
+
+@keyframes backglow{
+  from {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  5% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+   25% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+   50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+   75% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+   to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }}
+
+@keyframes whiteLight {
+from{
+    opacity: 1;
+}
+to {
+    opacity: 1;
+    }
+}
+
+/* 가맹문의 */
+.cloudOn1 {
+    background-image: url("../img/cloud2.png"), url("../img/cloud4.png"), url("../img/cloud6.png");
+    background-repeat: no-repeat;
+    background-position: 14vw 10%, 42vw 10%, 70vw 10%; 
+    position: absolute;
+    top: 100px; 
+    width: 120%;
+    height: 10%;
+    opacity: 1;
+    left: 0;
+    animation: cloudmove1 60s linear infinite;
+}
+.cloudOn2 {
+    background-image: url("../img/cloud1.png"),url("../img/cloud3.png"), url("../img/cloud5.png"), url("../img/cloud7.png"); 
+    background-repeat: no-repeat;
+    background-position: 5% 30%, 30% 30%, 60% 30%, 90% 30%;
+    position: absolute;
+    top: 250px; 
+    width: 100%;
+    height: 15%;
+    animation: cloudmove1 55s linear infinite;
+}
+@keyframes cloudmove1{
+    from {
+        left: 100vw; 
+    }
+    to {
+        left: -90vw; 
+    }
+}
+@keyframes cloudmove2{
+    from {
+        left: 100vw; 
+    }
+    to {
+        left: -90vw; 
+    }
+}
+.store {
+    position:relative;
+    background-color: #e4f7fd;
+
+    background-image: url("../img/tree6.png"), url("../img/tree5.png"), url("../img/tree4.png"), 
+    url("../img/tree3.png"), url("../img/tree2.png"), url("../img/tree1.png");
+
+    background-repeat: no-repeat;
+    background-position: 95% bottom, 90% bottom, 65% 104%, 60% 104%, 6% 104%, 2% bottom;
+}
+.storeLetter,.peopleBox {
+    transition-duration: 500ms;
+}
+.storeLetter{
+    font-family: 'Noto Sans KR', sans-serif;
+    position: absolute;
+    top: 470px;
+    left: 1000px;
+}
+#storeBox {
+    position:absolute;
+    width : 750px;
+    height: 455px; 
+    bottom: 0;
+    left: 10%;
+}
+#storeCompose {
+    width: 100%;
+}
+#storeLight {
+    opacity:0.9;
+    position:absolute;
+    left: 13px;
+    top: 35px;
+}
+.peopleBox{
+    position:absolute;
+    width: 189px;
+    height: 143px;
+    bottom:0;
+}
+.peopleBox1 {
+    left: 985px;
+}
+.peopleBox2 {
+    left: 1220px;
+}
+.people {
+    width: 189px;
+    position:absolute;
+    bottom:0;
+}
+.people1{
+    right:0px;
+}
+.people2{
+    right: 0px;
+}
+
+.arm1 {
+    width: 55px;
+    position:absolute;
+    bottom:77px;
+    right: 112px;
+    transform: rotate(-20deg);
+    transform-origin: 10px 10px; 
+    /* animation: armRotate1 3s ease 3; */
+}
+.arm2 {
+    width: 55px;
+    position:absolute;
+    bottom:70px;
+    right: 7px;
+    transform: rotate(7deg);
+    transform-origin: 50px 50px; 
+    /* animation: armRotate2 3s 2s ease 3; */
+}
+.arm3 {
+    width: 55px;
+    position:absolute;
+    bottom:72px;
+    right: 119px;
+    transform: rotate(0deg);
+    transform-origin: 10px 35px; 
+    /* animation: armRotate3 3s 1s ease 3; */
+}
+.arm4 {
+    width: 55px;
+    position:absolute;
+    bottom:83px;
+    right: 12px;
+    transform: rotate(0deg);
+    transform-origin: 48px 14px; 
+    /* animation: armRotate4 4s 3s ease 3; */
+}
+@keyframes armRotate0{
+    from {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(-80deg);
+    }
+    to {
+        transform: rotate(-20deg);
+    }
+}
+@keyframes armRotate1{
+    from {
+        transform: rotate(7deg);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(7deg);
+    }
+}
+@keyframes armRotate2{
+    from {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-40deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+@keyframes armRotate3{
+    from {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(70deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+@keyframes LightOn{
+    from {
+        opacity: 0.5;
+    }
+    40%{
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    60% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 0.3;
+    }
+    80% {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
+
+.footer {
+    height: 30%;
+    background-color: #241916;
+    font-size: 14px;
+    line-height: 1.6;
+    color: white;
+    padding-top: 30px; 
+    padding-left: 30px; 
+    box-sizing: border-box;
+    position:relative;
+}
+.footer::after { content: ""; display: block; clear: both; }
+.footerfloat {float:left; margin-left: 16%}
+.footerfloat > a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    display:block;
+    float:left;
+    padding: 1em 2em;
+    transition-duration: 200ms;
+}
+.footerfloat > a:hover {
+   color: #fed900;
+   font-weight: 700;
+}
+.footerA::after { content: ""; display: block; clear: both; }
+
+
+@keyframes clickMe{
+    from {
+        transform: rotate(-25deg) scale(1);
+    }
+    50% {
+        transform: rotate(-25deg) scale(1.5);  
+    }
+    to {
+        transform: rotate(-25deg) scale(1);
+    }
+}
+
+/* 미디어 쿼리 작성 */
+@media screen and (max-width: 1577px){
+    #promotionList > li {
+        left: 10%;
+        right: 10%;
+        height: 25%;
+        transform: translate(0, 0%);
+        background-color: transparent;
+    }
+ 
+    #promotionList > li.promotionN > a{
+        position:absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+    }
+    #promotionList > li.promotionN > a > img {
+        width: 1260px;
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 30px;
+    }
+    #promotionList > li.promotionN:hover > a > img {
+        transform: translate(-50%, -50%) scale(110%) ;
+    }
+    #promotionList > li.promotionN:hover > a > img {
+        transform: translate(-50%, -50%) scale(105%) ;
+    }
+    #promotionList > li.promotionN:hover > a > img {
+        transform: translate(-50%, -50%) scale(105%) ;
+    }
+}
+@media screen and (max-width: 1532px){
+    .storeLetter {
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        white-space: nowrap;
+    }
+    .storeLetter > a {
+        margin: 0 auto;
+    }
+    .peopleBox {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    #storeBox {
+        position:absolute;
+        width : 749px;
+        height: 44%; 
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #storeLight {
+        opacity:0.5;
+        position:absolute;
+        left: 50%;
+        top: 8%;
+        transform: translate(-50%,0);
+    }
+}
+@media screen and (max-width: 1424px){
+    #logoBox {
+        width: 100%;
+        background: url("../img/composeStory2.svg") #394e59 no-repeat;
+        background-position: right; 
+        background-size: 200px;
+    }
+    .storyLetter {
+        z-index: 1;
+        top: 60%;
+        right: 50%;
+        transform:translate(50%, 0);
+        text-align: center;
+        white-space: nowrap;
+    }
+    .storyLetter > a {
+        margin: 0 auto;
+        border: 3px solid #f2faff;
+        /* color: #f2faff; */
+    }
+    .storyLetter > a:hover {
+        margin: 0 auto;
+        border: 3px solid #f2faff;
+        color: #394e59;
+        background-color: #f2faff;
+    }
+    .storyLetter {
+        color: #f2faff;
+    }
+    #emptyLogo, .innerglow, .glowBox {
+        top: 35%;
+    }
+   
+    #emptyLogo {
+        transform: translate(-50%, -50%) scale(80%);
+    }
+    .innerglow, .glowBox {
+        transform: translate(-50%, -50%) scale(80%)
+    }
+    .glowBox {
+        width: 400px; 
+        height: 400px; 
+    }
+}
+@media screen and (max-width: 1300px){
+    .footerfloat {
+        margin-left: 0%
+    }
+}
+@media screen and (max-width: 1190px){
+    .menu {
+        position:relative;
+    }
+    #menuContent {
+        position:absolute;
+        top: 0;
+        left: 0%;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+    }
+    #menuContent::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 7%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(65,70,91,1) 27%, rgba(57,60,72,1) 30%);
+    right: 0;
+    border-radius: 30px;
+    display:none;
+    }
+    #menuContent > div {
+        width: 70%;
+    position: relative;
+    height: 18%;
+    background-image: none;
+    background-color: #3a3c48;
+    border-radius: 30px;
+    border: 5px dashed #fed900;
+    margin: 0 auto;
+    box-shadow: 3px 6px 6px #3030305c;
+    }
+    #menuContent > div:first-child{
+        margin-top: 310px;
+    }
+    #menuContent > div:nth-child(n) > img {
+        width: 20%;
+    }
+    #menuContent > div:not(:last-child) {
+        margin-bottom : 25px; 
+    }
+    #menuContent > div > span {
+        left: 50%;
+        bottom: 40%;
+        color: #fff;
+        white-space: nowrap;
+        font-weight: 400;
+        color: #fed900;
+    }
+    #menuContent > div:nth-child(1) > img,
+    #menuContent > div:nth-child(3) > img{
+        left: 17%;
+    }
+    #menuContent > div:nth-child(2) > img {
+        left: 80%;
+        bottom: 0%;
+    }
+    #menuContent > div:nth-child(3) > img {
+        width: 27%;
+    }
+
+}
+@media screen and (max-width: 1060px){
+    /* 메뉴바 크기조절 */
+    #menu > a > img {
+        width: 220px; 
+    }
+    #menu > a {
+        margin-top: 17.14px;
+    }
+    #menu > ul {
+        transition-duration: 400ms;
+        position: fixed;
+        top: 60px; 
+        right: -40%;
+        bottom: 0px;
+        width: 40%;
+        background-color: #262626;
+        z-index: 80;
+    }
+    #menu > ul.on {
+        right: 0;
+    }
+    #menu > button {
+        display:block;
+    }
+    #menu > ul > li {
+        width: 100%;
+        /* margin-bottom: 10%; */
+        border-bottom: 2px solid #fed90438;
+    }
+    #menu > ul > li > a {
+        padding: 40px 50px; 
+    }
+  #overlay {
+        position:fixed;
+        top: 60px;
+        width: 100%;
+        right: -100%;
+        bottom: 0; 
+        background-color: rgba(0, 0, 0, 0.455);
+        z-index: 70;
+        transition-duration: 300ms;
+        cursor: pointer;
+    }
+    #overlay.on {
+        position:fixed;
+        right: 0%;
+    }
+
+    /* 메인메뉴 조절 */
+    #compass {
+        width: 100%;
+    }
+    #compassPin {
+        width: 41%;
+    }
+    #clickme {
+        left: 30%;
+        bottom: 10%;
+        animation: clickmeScale2 4s ease infinite;
+        font-size:30px;
+    }
+    #composeTitle {
+        width: 82%;
+        bottom: 70%;
+    }
+    .beverage {
+        width: 20%;
+    }
+    img.beverage:nth-child(4){
+        right: 8%;
+        bottom: 24%;
+    }
+    img.beverage:nth-child(2){
+        left: 8%;
+        bottom: 24%;
+
+    }
+}
+@media screen and (max-width: 930px){
+    #storeBox {
+        width: 434px;
+    }
+    #storeCompose {
+      width: 434px; 
+      margin: 0 auto;
+    }
+    #storeLight {
+        width: 434px;
+        top: 0;
+    }
+
+    .footerfloat {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 700px){
+    /* 메인 음료 */
+    .beverage {
+        width: 25%;
+    }
+    img.beverage:nth-child(3){
+        bottom: 33%;
+    }
+
+    /* 브랜드 스토리 */
+    #emptyLogo {
+        transform: translate(-50%, -50%) scale(60%);
+    }
+    .innerglow, .glowBox {
+        width: 50%;
+        height: 30%;
+    }
+    #logoBox {
+        background-position: right 90%;
+        background-size: 20%;
+    }
+    .Letter > h2 {
+        font-size: 30px; 
+    }
+    .Letter > h3 {
+        font-size: 40px; 
+    }
+    .Letter > p {
+        font-size: 20px; 
+    }
+}
+
+@media screen and (max-width: 500px){
+    .main > div:first-child {
+        font-size: 25px;
+    }
+    #composeTitle {
+        bottom: 60%;
+        width: 100%;
+        animation: titleUp2 0.5s ease 1;
+    }
+    #menuContent > div:nth-child(n) > img {
+        width: 22%;
+    }
+    #menuContent > div:nth-child(3) > img {
+        width: 30%;
+        left: 18%;
+        bottom: 20%;
+    }
+    .main > div > span {
+        transition-duration: 200ms;
+        margin-top: 25%;
+        font-size: 48px;
+        margin-bottom: 25px;
+    }
+
+    .footerfloat {
+        font-size: 11px;
+    }
+}
