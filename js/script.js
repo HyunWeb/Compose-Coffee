@@ -111,7 +111,7 @@ $(function (){
 
         // 만약 스크롤이 아래로 굴려졌을때
         if(event.deltaY > 0) {
-            // 페이지 인덱스가 마지막 인덱스와 같아지면 작동취소
+            // 페이지 인덱스가 마지막 인덱스와 같아지면 작동취소    
             // 아닐경우 페이지 인덱스를 하나 올린다.  
             if(pageIndex == lastPageIndex) return;
             pageIndex++;
