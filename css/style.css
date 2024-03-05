@@ -106,7 +106,7 @@ body{overflow: hidden;}
     position: relative;
 }
 #composeTitle {
-    width: 38%;
+    width: 729px;
     position:absolute;
     left: 50%;
     bottom: 69%;
@@ -1055,7 +1055,7 @@ to {
         font-size:30px;
     }
     #composeTitle {
-        width: 82%;
+        width: 67%;
         bottom: 70%;
     }
     .beverage {
@@ -1072,6 +1072,10 @@ to {
     }
 }
 @media screen and (max-width: 930px){
+    #composeTitle {
+        width: 75%;
+        bottom: 70%;
+    }
     #storeBox {
         width: 434px;
     }
@@ -1089,6 +1093,11 @@ to {
     }
 }
 @media screen and (max-width: 700px){
+    #composeTitle {
+        width: 95%;
+        bottom: 70%;
+    }
+
     /* 메인 음료 */
     .beverage {
         width: 25%;
